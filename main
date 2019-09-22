@@ -1,0 +1,19 @@
+import cv2
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+#gradient = direction ex 2 mur, poutre, température f->c
+
+img = cv2.imread("image.jpg")
+
+#cv2.HOGDescriptor
+
+
+for i in range(img.shape[1]):
+    for j in range(img.shape[0]):
+        if i % 8 == 0 and j % 8 == 0:
+            cv2.rectangle(img, (i-8, j), (i, j+8), (0, 255, 0), 1)      
+
+cv2.imshow("image", img); cv2.waitKey(0); cv2.destroyAllWindows()
+
+
